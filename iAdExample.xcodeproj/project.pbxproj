@@ -13,6 +13,10 @@
 		95C595D31A6D3A5300A788C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C595D21A6D3A5300A788C4 /* Images.xcassets */; };
 		95C595D61A6D3A5300A788C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C595D41A6D3A5300A788C4 /* LaunchScreen.xib */; };
 		95C595E21A6D3A5300A788C4 /* iAdExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C595E11A6D3A5300A788C4 /* iAdExampleTests.swift */; };
+		95C595EC1A6D3A7A00A788C4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C595EB1A6D3A7A00A788C4 /* iAd.framework */; };
+		95C595EF1A6D3BDF00A788C4 /* Global_iAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C595EE1A6D3BDF00A788C4 /* Global_iAd.swift */; };
+		95C595F11A6D474100A788C4 /* LICENSE.TXT in Resources */ = {isa = PBXBuildFile; fileRef = 95C595F01A6D474100A788C4 /* LICENSE.TXT */; };
+		95C595F31A6D478700A788C4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 95C595F21A6D478700A788C4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		95C595DB1A6D3A5300A788C4 /* iAdExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iAdExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C595E01A6D3A5300A788C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C595E11A6D3A5300A788C4 /* iAdExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iAdExampleTests.swift; sourceTree = "<group>"; };
+		95C595EB1A6D3A7A00A788C4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		95C595EE1A6D3BDF00A788C4 /* Global_iAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global_iAd.swift; sourceTree = "<group>"; };
+		95C595F01A6D474100A788C4 /* LICENSE.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.TXT; sourceTree = SOURCE_ROOT; };
+		95C595F21A6D478700A788C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C595EC1A6D3A7A00A788C4 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,9 @@
 		95C595BD1A6D3A5300A788C4 = {
 			isa = PBXGroup;
 			children = (
+				95C595EB1A6D3A7A00A788C4 /* iAd.framework */,
+				95C595F21A6D478700A788C4 /* README.md */,
+				95C595F01A6D474100A788C4 /* LICENSE.TXT */,
 				95C595C81A6D3A5300A788C4 /* iAdExample */,
 				95C595DE1A6D3A5300A788C4 /* iAdExampleTests */,
 				95C595C71A6D3A5300A788C4 /* Products */,
@@ -77,6 +89,7 @@
 		95C595C81A6D3A5300A788C4 /* iAdExample */ = {
 			isa = PBXGroup;
 			children = (
+				95C595ED1A6D3A8C00A788C4 /* iAd */,
 				95C595CB1A6D3A5300A788C4 /* AppDelegate.swift */,
 				95C595CD1A6D3A5300A788C4 /* ViewController.swift */,
 				95C595CF1A6D3A5300A788C4 /* Main.storyboard */,
@@ -110,6 +123,14 @@
 				95C595E01A6D3A5300A788C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95C595ED1A6D3A8C00A788C4 /* iAd */ = {
+			isa = PBXGroup;
+			children = (
+				95C595EE1A6D3BDF00A788C4 /* Global_iAd.swift */,
+			);
+			name = iAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C595F11A6D474100A788C4 /* LICENSE.TXT in Resources */,
 				95C595D11A6D3A5300A788C4 /* Main.storyboard in Resources */,
 				95C595D61A6D3A5300A788C4 /* LaunchScreen.xib in Resources */,
 				95C595D31A6D3A5300A788C4 /* Images.xcassets in Resources */,
@@ -213,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C595CE1A6D3A5300A788C4 /* ViewController.swift in Sources */,
+				95C595EF1A6D3BDF00A788C4 /* Global_iAd.swift in Sources */,
+				95C595F31A6D478700A788C4 /* README.md in Sources */,
 				95C595CC1A6D3A5300A788C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

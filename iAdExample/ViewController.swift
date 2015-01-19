@@ -3,23 +3,27 @@
 //  iAdExample
 //
 //  Created by Matteo on 19/01/15.
-//  Copyright (c) 2015 Matteo. All rights reserved.
+//  Copyright (c) 2015 Matteo. Licensed under the MIT License
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerTopAd: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        moveADBannerToViewController(self, atPosition: .Top)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
+class ViewControllerBottomAd: UIViewController {
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        moveADBannerToViewController(self, atPosition: .Bottom)
+    }
+    
+}
