@@ -16,7 +16,6 @@
 		95C595EC1A6D3A7A00A788C4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C595EB1A6D3A7A00A788C4 /* iAd.framework */; };
 		95C595EF1A6D3BDF00A788C4 /* Global_iAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C595EE1A6D3BDF00A788C4 /* Global_iAd.swift */; };
 		95C595F11A6D474100A788C4 /* LICENSE.TXT in Resources */ = {isa = PBXBuildFile; fileRef = 95C595F01A6D474100A788C4 /* LICENSE.TXT */; };
-		95C595F31A6D478700A788C4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 95C595F21A6D478700A788C4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +235,6 @@
 			files = (
 				95C595CE1A6D3A5300A788C4 /* ViewController.swift in Sources */,
 				95C595EF1A6D3BDF00A788C4 /* Global_iAd.swift in Sources */,
-				95C595F31A6D478700A788C4 /* README.md in Sources */,
 				95C595CC1A6D3A5300A788C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +427,7 @@
 				95C595E71A6D3A5300A788C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95C595E81A6D3A5300A788C4 /* Build configuration list for PBXNativeTarget "iAdExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +436,7 @@
 				95C595EA1A6D3A5300A788C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
