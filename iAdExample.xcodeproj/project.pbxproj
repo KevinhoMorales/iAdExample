@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95517E361B46B9AD0095033B /* FooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95517E351B46B9AD0095033B /* FooViewController.swift */; };
 		95C595CC1A6D3A5300A788C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C595CB1A6D3A5300A788C4 /* AppDelegate.swift */; };
 		95C595CE1A6D3A5300A788C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C595CD1A6D3A5300A788C4 /* ViewController.swift */; };
 		95C595D11A6D3A5300A788C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C595CF1A6D3A5300A788C4 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95517E351B46B9AD0095033B /* FooViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooViewController.swift; sourceTree = "<group>"; };
 		95C595C61A6D3A5300A788C4 /* iAdExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iAdExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C595CA1A6D3A5300A788C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C595CB1A6D3A5300A788C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				95C595ED1A6D3A8C00A788C4 /* iAd */,
 				95C595CB1A6D3A5300A788C4 /* AppDelegate.swift */,
 				95C595CD1A6D3A5300A788C4 /* ViewController.swift */,
+				95517E351B46B9AD0095033B /* FooViewController.swift */,
 				95C595CF1A6D3A5300A788C4 /* Main.storyboard */,
 				95C595D21A6D3A5300A788C4 /* Images.xcassets */,
 				95C595D41A6D3A5300A788C4 /* LaunchScreen.xib */,
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C595CE1A6D3A5300A788C4 /* ViewController.swift in Sources */,
+				95517E361B46B9AD0095033B /* FooViewController.swift in Sources */,
 				95C595EF1A6D3BDF00A788C4 /* Global_iAd.swift in Sources */,
 				95C595CC1A6D3A5300A788C4 /* AppDelegate.swift in Sources */,
 			);

@@ -12,7 +12,9 @@ import iAd
 
 public enum ADBannerPosition {
     case Top
+    case TopOf(UIView)
     case Bottom
+    case BottomOf(UIView)
 }
 
 
@@ -34,13 +36,33 @@ public final class ADBannerSignleton:NSObject, ADBannerViewDelegate {
         
         view.addSubview(sharedADBannerView)
         
-        let visualDictionary = [
-            "banner" : sharedADBannerView
-        ]
+        let visualDictionary: [String : UIView]
+        let margin: CGFloat
+        let verticalFormat: String
         
-        let margin = (position == .Top) ? viewController.topLayoutGuide.length : viewController.bottomLayoutGuide.length
+        switch position {
+        case .Top:
+            visualDictionary = [ "banner" : sharedADBannerView ]
+            margin = viewController.topLayoutGuide.length
+            verticalFormat = "V:|-(\(margin))-[banner]"
+        case let .TopOf(view):
+            visualDictionary = [
+                "banner" : sharedADBannerView,
+                "view": view]
+            margin = 0.0
+            verticalFormat = "[view]-(\(margin))-[banner]"
+        case .Bottom:
+            visualDictionary = [ "banner" : sharedADBannerView ]
+            margin = viewController.bottomLayoutGuide.length
+            verticalFormat = "V:[banner]-(\(margin))-|"
+        case let .BottomOf(view):
+            visualDictionary = [
+                "banner" : sharedADBannerView,
+                "view": view]
+            margin = 0.0
+            verticalFormat = "V:[view]-(\(margin))-[banner]"
+        }
         
-        let verticalFormat = (position == .Top) ? "V:|-(\(margin))-[banner]" : "V:[banner]-(\(margin))-|"
         let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
             verticalFormat,
             options: NSLayoutFormatOptions.allZeros,
