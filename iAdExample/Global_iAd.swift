@@ -10,56 +10,55 @@ import UIKit
 import iAd
 
 
-public enum ADBAnnerPosition {
+public enum ADBannerPosition {
     case Top
     case Bottom
 }
 
 
-public func moveADBannerToViewController(viewController: UIViewController, atPosition position: ADBAnnerPosition) {
-    sharedADBannerView.removeFromSuperview()
-    let view = viewController.view
+public final class ADBannerSignleton:NSObject, ADBannerViewDelegate {
+    // The banner singleton
+    private static let sharedADBannerView: ADBannerView = {
+        let b = ADBannerView(adType: ADAdType.Banner)
+        b.setTranslatesAutoresizingMaskIntoConstraints(false)
+        b.hidden = true
+        b.delegate = ADBannerSignleton.sharedDelegate
+        return b
+        }()
     
-    view.addSubview(sharedADBannerView)
+    private static let sharedDelegate = ADBannerSignleton()
     
-    let visualDictionary = [
-        "banner" : sharedADBannerView
-    ]
-    
-    let margin = (position == .Top) ? viewController.topLayoutGuide.length : viewController.bottomLayoutGuide.length
-    
-    let verticalFormat = (position == .Top) ? "V:|-(\(margin))-[banner]" : "V:[banner]-(\(margin))-|"
-    let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-        verticalFormat,
-        options: NSLayoutFormatOptions.allZeros,
-        metrics: nil,
-        views: visualDictionary)
-    
-    let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
-        "|-0-[banner]-0-|",
-        options: NSLayoutFormatOptions.allZeros,
-        metrics: nil,
-        views: visualDictionary)
-    
-    view.addConstraints(verticalConstraints + horizontalConstraints)
-}
-
-// The banner singleton
-private let sharedADBannerView: ADBannerView = {
-    let b = ADBannerView(adType: ADAdType.Banner)
-    b.setTranslatesAutoresizingMaskIntoConstraints(false)
-    b.hidden = true
-    b.delegate = b
-    return b
-    }()
-
-// The ADBannerView can be delegate of itself
-//  and just hide or show the banner
-extension ADBannerView: ADBannerViewDelegate {
+    public static func moveSharedADBannerToViewController(viewController: UIViewController, atPosition position: ADBannerPosition) {
+        sharedADBannerView.removeFromSuperview()
+        let view = viewController.view
+        
+        view.addSubview(sharedADBannerView)
+        
+        let visualDictionary = [
+            "banner" : sharedADBannerView
+        ]
+        
+        let margin = (position == .Top) ? viewController.topLayoutGuide.length : viewController.bottomLayoutGuide.length
+        
+        let verticalFormat = (position == .Top) ? "V:|-(\(margin))-[banner]" : "V:[banner]-(\(margin))-|"
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+            verticalFormat,
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: visualDictionary)
+        
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
+            "|-0-[banner]-0-|",
+            options: NSLayoutFormatOptions.allZeros,
+            metrics: nil,
+            views: visualDictionary)
+        
+        view.addConstraints(verticalConstraints + horizontalConstraints)
+    }
     
     public func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        if banner === self {
-            self.hidden = true
+        if banner === ADBannerSignleton.sharedADBannerView {
+            banner.hidden = true
         }
     }
     
@@ -68,8 +67,9 @@ extension ADBannerView: ADBannerViewDelegate {
     }
     
     public func bannerViewDidLoadAd(banner: ADBannerView!) {
-        if banner === self {
-            self.hidden = false
+        if banner === ADBannerSignleton.sharedADBannerView {
+            banner.hidden = false
         }
     }
 }
+

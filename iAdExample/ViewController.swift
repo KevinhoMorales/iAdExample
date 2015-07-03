@@ -13,7 +13,7 @@ class ViewControllerTopAd: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        moveADBannerToViewController(self, atPosition: .Top)
+        ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Top)
     }
 
 }
@@ -23,7 +23,7 @@ class ViewControllerBottomAd: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        moveADBannerToViewController(self, atPosition: .Bottom)
+        ADBannerSignleton.moveSharedADBannerToViewController(self, atPosition: .Bottom)
     }
     
 }
