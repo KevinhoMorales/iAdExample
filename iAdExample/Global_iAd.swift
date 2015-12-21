@@ -22,7 +22,7 @@ public final class ADBannerSignleton:NSObject, ADBannerViewDelegate {
     // The banner singleton
     private static let sharedADBannerView: ADBannerView = {
         let b = ADBannerView(adType: ADAdType.Banner)
-        b.setTranslatesAutoresizingMaskIntoConstraints(false)
+        b.translatesAutoresizingMaskIntoConstraints = false
         b.hidden = true
         b.delegate = ADBannerSignleton.sharedDelegate
         return b
@@ -65,13 +65,13 @@ public final class ADBannerSignleton:NSObject, ADBannerViewDelegate {
         
         let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
             verticalFormat,
-            options: NSLayoutFormatOptions.allZeros,
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: visualDictionary)
         
         let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat(
             "|-0-[banner]-0-|",
-            options: NSLayoutFormatOptions.allZeros,
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: visualDictionary)
         
